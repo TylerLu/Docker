@@ -1,0 +1,239 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.  
+See LICENSE in the project root for license information.   -->
+<%= content_for :title, 'Class Details - EDUGraphAPI' %>
+
+<% content_for :header_list do %>
+  <%= render 'common/header_list', class_info: @class_info %>
+<% end %>
+
+<% content_for :user_login_info do %>
+    <%= render 'common/user_login_info', userinfo: session[:current_user] %>
+<% end %>
+
+
+<div class="row schools class-details">
+    <div class="tophero">
+        <div class="container">
+            <div class="col-md-6 secondnav">
+                <a href="/schools"> All Schools</a>
+                > <a href='/schools/<%= @class_info[:school_id] %>/classes?<%= URI.encode("id=#{@class_info[:school_id]}&school_number=#{@class_info[:school_number]}&school_name=#{@class_info[:school_name]}&low_grade=#{@class_info[:low_grade]}&high_grade=#{@class_info[:high_grade]}&principal=#{@class_info[:principal]}") %>'><%= @class_info[:school_name] %></a>
+                > <%= @myclass['extension_fe2174665583431c953114ff7268b7b3_Education_CourseName'] %>
+            </div>
+        </div>
+        <div class="container">
+            <div class="a-heading ">Class Details</div>
+            <div class="b-title"><%= @myclass['extension_fe2174665583431c953114ff7268b7b3_Education_CourseNumber'] %> | <%= @myclass['displayName'] %></div>
+        </div>
+        <div class="container coursedetail">
+            <div class="col-md-6">
+                <span>Course Name:</span> <%= @myclass['extension_fe2174665583431c953114ff7268b7b3_Education_CourseName'] %>
+                <br />
+                <span>Description:</span> <%= @myclass['extension_fe2174665583431c953114ff7268b7b3_Education_CourseDescription'] %>
+                <br />
+                <span>Period:</span> <%= @myclass['extension_fe2174665583431c953114ff7268b7b3_Education_Period'] %>
+                <br />
+                <span>Term Name:</span> <%= @myclass['extension_fe2174665583431c953114ff7268b7b3_Education_TermName'] %>
+                <br />
+                <span>Start/Finish Date:</span>
+                <span id="termdate"><%= @myclass['extension_fe2174665583431c953114ff7268b7b3_Education_TermStartDate'] %></span>
+                <span id="termdate-separator"> - </span>
+                <span id="termdate"><%= @myclass['extension_fe2174665583431c953114ff7268b7b3_Education_TermEndDate'] %></span>
+            </div>
+            <div class="col-md-6">
+                <span>Teacher:</span> 
+                <%= (@student_info.select{|_| _[:object_type] == 'Teacher'}.first || {}).fetch(:displayName, '') %>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="students">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#students"><span>Students</span></a></li>
+            <li><a data-toggle="tab" href="#documents" id="classdoclink"><span>Class Documents</span></a></li>
+            <li><a data-toggle="tab" href="#conversations"><span>Conversations</span></a></li>
+            <li><a data-toggle="tab" href="#seatingchart"><span>SEATING CHART</span></a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="students" class="tab-pane fade in active">
+                    <table class="table  table-green table-student tablesorter" id="studentsTable">
+                        <thead>
+                            <tr class="table-green-header">
+                                <th class="tdleft">student name</th>
+                                <th>grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @student_info.select{|_| _[:object_type] == 'Student'}.each do |student| %>
+                                <tr class="tr-content">
+                                    <td><img src="<%= student[:photo] %>" realheader="<%= student[:photo] %>" /> <%= student[:displayName] %> </td>
+                                    <td><%= student[:grade] %></td>
+                                </tr>
+                            <% end %>    
+                        </tbody>
+                    </table>
+            </div>
+            <div id="documents" class="tab-pane fade">
+                    <table id="studoc" class="table  table-green table-student tablesorter">
+                        <thead>
+                            <tr class="table-green-header">
+                                <th class="border-holder"></th>
+                                <th class="space-holder left"></th>
+                                <th class="tdleft">document name</th>
+                                <th class="tdleft">modified</th>
+                                <th class="tdleft">modified by</th>
+                                <th class="space-holder right"></th>
+                            </tr>
+                            <tr class="blanktr">
+                                <th colspan="5"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @items.each do |item| %>
+                            <tr class="tr-content">
+                                <td class="border-holder"></td>
+                                <td class="space-holder left"></td>
+                                <td>
+                                    <a target="_blank" href="<%= item.web_url %>"><%= item.name %></a>
+                                </td>
+                                <td><%= item.last_modified_date_time %></td>
+                                <td><%= item.created_by.user.display_name %></td>
+                                <td class="space-holder right"></td>
+                            </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                <span class="see-more"><a href="https://canvizedu.sharepoint.com/sites/<%= @myclass['mail'] %>/Shared%20Documents" target="_blank">See All</a></span>
+                <br style="clear:both" />
+            </div>
+            <div id="conversations" class="tab-pane fade">
+                    <table id="stuconv" class="table  table-green table-student">
+                        <tbody>
+                            <% @conversations.each do |conversation| %>
+                                <tr class="tr-content">
+                                    <td class="border-holder"></td>
+                                    <td class="space-holder left"></td>
+                                    <td>
+                                        <a target="_blank" href="https://outlook.office.com/owa/?path=/group/<%= @myclass['mail'] %>/mail&exsvurl=1&ispopout=0&ConvID=<%= conversation.id %>"><%= conversation.topic %></a>
+                                    </td>
+                                    <td class="space-holder right"></td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                <span class="see-more"><a target="_blank" href="https://outlook.office.com/owa/?path=/group/<%= @myclass['mail'] %>/mail&amp;exsvurl=1&amp;ispopout=0">See All</a></span>
+                <br style="clear:both" />
+            </div>
+
+            <% if session[:current_user][:user_identify] == "Teacher" %>
+            <div id="seatingchart" class="tab-pane fade">
+                <div id="saveResult" style="display: none;"><div>Seating map changes saved.</div></div>
+                <div class="left" id="dvleft">
+                        <div class="tip"> To assign seats for each student, drag and drop student profile icons below onto the seating map to the right.</div>
+                    <ul id="lstproducts">
+                        <% @student_info.select{|_| _[:object_type] == 'Student'}.each do |student| %>
+                        <li id="<%= student[:user_id] %>">
+                            <img src="<%= student[:photo] %>" realheader="<%= student[:photo] %>" />
+                            <span class="disname"> <%= student[:displayName] %> </span>
+                            <span class="seated <%= 'hideitem' unless student[:has_seat] %>">seated ✓</span>
+                        </li>
+                        <% end %>
+                    </ul>
+                    <div id="hidtiles" class="hideitem">
+                        <% @student_info.select{|_| _[:object_type] == 'Student' && !_[:has_seat] }.each do |student| %>
+                        <div class="deskcontainer unsaved" style="<%= 'background-color: ' + student[:favorite_color] if student[:favorite_color] %>" position="0" userid="<%= student[:user_id] %>">
+                            <div class="deskclose"><img src="/Images/close.png"></div>
+                            <div class="deskicon">
+                                <img src="<%= student[:photo] %>" realheader="<%= student[:photo] %>" />
+                            </div>
+                            <div class="stuname"><%= student[:displayName] %></div>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="right" id="dvright">
+                    <div class="teacherdesk" style="background-color: <%= @user_info.favorite_color || '#2F19FF' %>">Teacher's desk</div>
+                    <div>
+                        <div id="graybg">
+                            <% (1..36).each do |index| %>
+                                <% if _student = @student_settings[index] %>
+                                <div class="desktile" position="<%= index %>">
+                                    <div class="deskcontainer white" style="<%= 'background-color: ' + @id_color[_student.first.user_id] if @id_color[_student.first.user_id] %>" position="<%= index %>" userid="<%= _student.first.user_id %>">
+                                        <div class="deskclose" style="display: none;"><img src="/Images/close.png"></div>
+                                        <div class="deskicon">
+                                            <img src="/Images/header.png" realheader="<%= get_user_photo_url(_student.first.user_id) %>">
+                                        </div>
+                                    <div class="stuname"><%= @id_name[_student.first.user_id] %></div>
+                                    </div>
+                                </div>
+                                <% else %>
+                                    <div class="desktile" position="<%= index %>"></div>
+                                <% end %>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvedit" class="dvedit">
+                        <img id="imgedit" src="/Images/edit.png" style="">
+                        <img id="imgsave" src="/Images/save.png" style="display: none;">
+                        <img id="imgcancel" src="/Images/cancel.png" style="display: none;">
+                </div>
+                <br style="clear:both">
+            </div>
+            <% else %>
+            <div id="seatingchart" class="tab-pane fade ">
+                <div class="left" id="dvleft">
+                        <div class="assignseat tip"><div class="greenicon" style="background-color:#2F19FF"></div>Your assigned seat </div>
+                    <ul id="lstproducts">
+                        <% @student_info.select{|_| _[:object_type] == 'Student'}.each do |student| %>
+                        <li id="<%= student[:user_id] %>">
+                            <img src="<%= student[:photo] %>" realheader="<%= student[:photo] %>" />
+                            <span class="disname"> <%= student[:displayName] %> </span>
+                            <span class="seated <%= 'hideitem' unless student[:has_seat] %>">seated ✓</span> 
+                        </li>
+                        <% end %>
+                    </ul>
+                    <div id="hidtiles" class="hideitem">
+                        <% @student_info.select{|_| _[:object_type] == 'Student' && !_[:has_seat] }.each do |student| %>
+                        <div class="deskcontainer unsaved green" style="background-color:#2F19FF" position="0" userid="<%= student[:user_id] %>">
+                            <div class="deskclose"><img src="/Images/close.png"></div>
+                            <div class="deskicon">
+                                <img src="<%= student[:photo] %>" realheader="<%= student[:photo] %>" />
+                            </div>
+                            <div class="stuname"><%= student[:displayName] %></div>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="right" id="dvright">
+                    <div class="teacherdesk" style="">Teacher's desk</div>
+                    <div>
+                        <div id="graybg">
+                            <% (1..36).each do |index| %>
+                                <% if _student = @student_settings[index] %>
+                                <div class="desktile" position="<%= index %>">
+                                    <div class="deskcontainer white" style="<%= 'background-color: ' + @id_color[_student.first.user_id] if @id_color[_student.first.user_id] %>" position="<%= index %>" userid="<%= _student.first.user_id %>">
+                                        <div class="deskclose"><img src="/Images/close.png"></div>
+                                        <div class="deskicon">
+                                            <img src="/Images/header.png" realheader="<%= get_user_photo_url(_student.first.user_id) %>">
+                                        </div>
+                                    <div class="stuname"><%= @id_name[_student.first.user_id] %></div>
+                                    </div>
+                                </div>
+                                <% else %>
+                                    <div class="desktile" position="<%= index %>"></div>
+                                <% end %>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvedit" class="dvedit">
+                </div>
+                <br style="clear:both" />
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+<input type="hidden" name="hidSectionid" id="hidSectionid" value="<%= @myclass['objectId'] %>" />
+
+<%= javascript_include_tag "classdetail" %>

@@ -1,0 +1,89 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.  
+See LICENSE in the project root for license information.   -->
+
+<%= content_for :title, 'ALL SCHOOLS - EDUGraphAPI' %>
+
+<% content_for :header_list do %>
+  <%= render 'common/header_list' %>
+<% end %>
+
+<% content_for :user_login_info do %>
+	<%= render 'common/user_login_info', userinfo: session[:current_user] %>
+<% end %>
+
+<% unless is_linked? %>
+  <br />
+  <p>You will need to link your O365 and local accounts in order to use the functionality of this demo application. Please click on the browser 'Back' button to go back and link your existing local account or create a local account.</p>
+<% else %>
+<% if flash[:notice] == 'linked' %>
+<div class="message-container bg-success">
+    <p>Your local account has been successfully linked to your Office 365 account.</p>
+</div>
+<% end %>
+<div class="row schools">
+  <div class="tophero">
+      <div class="col-md-6">
+          <div class="a-heading schoolname">ALL SCHOOLS</div>
+      </div>
+      <div class="col-md-6 schooltiles">
+        <% if usertype = @me["extension_fe2174665583431c953114ff7268b7b3_Education_ObjectType"] %>
+      	<div class="infocontainer">
+            <div class="infoheader">
+							<%= usertype %> Id
+            </div>
+            <div class="infobody"><%= @me["extension_fe2174665583431c953114ff7268b7b3_Education_SyncSource_#{usertype}Id"] %></div>
+        </div>
+        <% end %>
+      </div>
+      <div class="container myschool">
+          <div class="schoolenrolled">Current school(s) enrolled</div>
+          <div class="greenicon"></div>
+      </div>
+      <div style="clear:both;" />
+  </div>
+      <% if @schools.blank? %>
+        <div class="nodata">There is no data available for this page at this time.</div>
+      <% else %>
+      <table class="table  table-green table-schools">
+          <tr class="table-green-header">
+              <th class="tdleft">School Name</th>
+              <th>Principal</th>
+              <th>Grade Levels</th>
+              <th>Address</th>
+              <th></th>
+          </tr>
+					<% @schools.each do |school| %>
+          <tr class="tr-content <%= 'td-green' if (school_number = school['extension_fe2174665583431c953114ff7268b7b3_Education_SchoolNumber']) == @me['extension_fe2174665583431c953114ff7268b7b3_Education_SyncSource_SchoolId'] %>">
+              <td><%= school["displayName"] %></td>
+              <td><%= principal = school["extension_fe2174665583431c953114ff7268b7b3_Education_SchoolPrincipalName"] || '-' %></td>
+              <td><%= low_grade = school["extension_fe2174665583431c953114ff7268b7b3_Education_LowestGrade"] %> - <%= high_grade = school["extension_fe2174665583431c953114ff7268b7b3_Education_HighestGrade"] %></td>
+              <td>
+                  <div class="schooladdress">
+                    <% if school["extension_fe2174665583431c953114ff7268b7b3_Education_Address"].present? %>
+                      <%= school["extension_fe2174665583431c953114ff7268b7b3_Education_Address"] %><br />
+											<%= school["extension_fe2174665583431c953114ff7268b7b3_Education_City"] %>, <%= school["extension_fe2174665583431c953114ff7268b7b3_Education_StateId"] %> <%= school["extension_fe2174665583431c953114ff7268b7b3_Education_Zip"] %>
+                    <% else %>
+                      -
+                    <% end %>
+                  </div>
+                  <div class="schoolmap">
+                    <% if school["extension_fe2174665583431c953114ff7268b7b3_Education_Address"].present? %>
+                      <a class="bingMapLink" lat="<%= school[:location][:lat] %>" lon="<%= school[:location][:lon] %>" href="javascript:void(0)"><img src="<%= school['extension_fe2174665583431c953114ff7268b7b3_Education_SchoolNumber'] == @me['extension_fe2174665583431c953114ff7268b7b3_Education_SyncSource_SchoolId'] ? '/Images/icon-map_30x28px-WHT.png' : '/Images/icon-map_30x28px-BLU.png' %>" /></a>
+                    <% end %>
+                  </div>
+              </td>
+              <td>
+                  <a class="btnlink" href="/schools/<%= school["objectId"] %>/classes?<%= URI.encode "school_name=#{school['displayName']}&low_grade=#{low_grade}&high_grade=#{high_grade}&principal=#{principal}&school_number=#{school_number}" %>">Classes</a>
+                  <a class="btnlink" href="/schools/<%= school["objectId"] %>/users?<%= URI.encode "school_name=#{school['displayName']}&low_grade=#{low_grade}&high_grade=#{high_grade}&principal=#{principal}&school_number=#{school_number}" %>">Teachers/students</a>
+              </td>
+          </tr>
+          <% end %> 
+      </table>
+      <% end %> 
+</div>
+<div id='myMap'></div>
+<input type="hidden" name="BingMapKey" id="BingMapKey" value="<%= Settings.bing_map_key %>" />
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol' async defer></script>
+<%= javascript_include_tag "schools" %>
+
+<% end %>

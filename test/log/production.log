@@ -1,0 +1,238 @@
+I, [2017-03-31T15:27:54.664190 #43694]  INFO -- : [eeada443-dc9e-4a23-b68b-313dd666832b] Started GET "/account/login" for 180.150.157.11 at 2017-03-31 15:27:54 +0800
+I, [2017-03-31T15:27:54.669107 #43694]  INFO -- : [eeada443-dc9e-4a23-b68b-313dd666832b] Processing by AccountController#login as HTML
+I, [2017-03-31T15:27:54.673255 #43694]  INFO -- : [eeada443-dc9e-4a23-b68b-313dd666832b]   Rendering account/login.html.erb within layouts/application
+I, [2017-03-31T15:27:54.676983 #43694]  INFO -- : [eeada443-dc9e-4a23-b68b-313dd666832b]   Rendered account/login.html.erb within layouts/application (3.6ms)
+I, [2017-03-31T15:27:57.360761 #43694]  INFO -- : [eeada443-dc9e-4a23-b68b-313dd666832b] Completed 500 Internal Server Error in 2691ms
+F, [2017-03-31T15:27:57.361667 #43694] FATAL -- : [eeada443-dc9e-4a23-b68b-313dd666832b]   
+F, [2017-03-31T15:27:57.361716 #43694] FATAL -- : [eeada443-dc9e-4a23-b68b-313dd666832b] ActionView::Template::Error (Access denied for user 'b30652b7d280de'@'137.116.185.53' (using password: YES)):
+F, [2017-03-31T15:27:57.361868 #43694] FATAL -- : [eeada443-dc9e-4a23-b68b-313dd666832b]      6:   <head>
+[eeada443-dc9e-4a23-b68b-313dd666832b]      7:     <title><%= content_for?(:title) ? yield(:title) : 'EDUGraphAPI' %></title>
+[eeada443-dc9e-4a23-b68b-313dd666832b]      8:     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+[eeada443-dc9e-4a23-b68b-313dd666832b]      9:     <%= csrf_meta_tags %>
+[eeada443-dc9e-4a23-b68b-313dd666832b]     10:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+[eeada443-dc9e-4a23-b68b-313dd666832b]     11:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+[eeada443-dc9e-4a23-b68b-313dd666832b]     12:   </head>
+F, [2017-03-31T15:27:57.361893 #43694] FATAL -- : [eeada443-dc9e-4a23-b68b-313dd666832b]   
+F, [2017-03-31T15:27:57.361914 #43694] FATAL -- : [eeada443-dc9e-4a23-b68b-313dd666832b] app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___218912562395862537_70152069187740'
+I, [2017-03-31T15:28:28.420450 #43694]  INFO -- : [d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] Started GET "/" for 180.150.157.11 at 2017-03-31 15:28:28 +0800
+F, [2017-03-31T15:28:28.421108 #43694] FATAL -- : [d10bf4ac-51a7-46bd-86f4-7d75ed4d5357]   
+F, [2017-03-31T15:28:28.421154 #43694] FATAL -- : [d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] ActionController::RoutingError (No route matches [GET] "/"):
+F, [2017-03-31T15:28:28.421185 #43694] FATAL -- : [d10bf4ac-51a7-46bd-86f4-7d75ed4d5357]   
+F, [2017-03-31T15:28:28.421213 #43694] FATAL -- : [d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] railties (5.0.2) lib/rails/engine.rb:522:in `call'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+[d10bf4ac-51a7-46bd-86f4-7d75ed4d5357] puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+D, [2017-03-31T15:46:15.593245 #44749] DEBUG -- :   [1m[35m (80.8ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+D, [2017-03-31T15:46:15.834159 #44749] DEBUG -- :   [1m[35m (105.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+D, [2017-03-31T15:46:15.876244 #44749] DEBUG -- :   [1m[35m (41.9ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+D, [2017-03-31T15:46:15.915751 #44749] DEBUG -- :   [1m[35m (39.3ms)[0m  [1m[34mSELECT GET_LOCK('7569703287600185655', 0);[0m
+D, [2017-03-31T15:46:16.075626 #44749] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (105.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+I, [2017-03-31T15:46:16.132587 #44749]  INFO -- : Migrating to CreateAccounts (20170303081017)
+D, [2017-03-31T15:46:16.209004 #44749] DEBUG -- :   [1m[35m (72.4ms)[0m  [1m[35mCREATE TABLE `accounts` (`id` int AUTO_INCREMENT PRIMARY KEY, `first_name` varchar(40) DEFAULT '' COMMENT '姓', `last_name` varchar(40) DEFAULT '' COMMENT '名字', `organization_id` int, `o365_user_id` varchar(255), `o365_email` varchar(255) COMMENT '365邮箱', `job_title` varchar(255), `department` varchar(255), `mobile` varchar(30) COMMENT '手机号码', `business_phones` varchar(255) DEFAULT '', `favorite_color` varchar(20) COMMENT '喜欢的颜色', `username` varchar(50) COMMENT '姓名', `password` varchar(255) COMMENT '密码', `email` varchar(70) COMMENT '邮箱', `remember_me` tinyint(1) COMMENT '是否记住', `role_id` int COMMENT '角色id', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB COMMENT '用户信息表'[0m
+D, [2017-03-31T15:46:16.295382 #44749] DEBUG -- :   [1m[35m (42.2ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T15:46:16.340684 #44749] DEBUG -- :   [1m[35mSQL (44.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170303081017')[0m
+D, [2017-03-31T15:46:16.381734 #44749] DEBUG -- :   [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-03-31T15:46:16.381873 #44749]  INFO -- : Migrating to AddSessionsTable (20170307080639)
+D, [2017-03-31T15:46:16.459269 #44749] DEBUG -- :   [1m[35m (74.8ms)[0m  [1m[35mCREATE TABLE `sessions` (`id` int AUTO_INCREMENT PRIMARY KEY, `session_id` varchar(255) NOT NULL, `data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+D, [2017-03-31T15:46:16.718797 #44749] DEBUG -- :   [1m[35m (175.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_sessions_on_session_id`  ON `sessions` (`session_id`) [0m
+D, [2017-03-31T15:46:16.891192 #44749] DEBUG -- :   [1m[35m (94.5ms)[0m  [1m[35mCREATE  INDEX `index_sessions_on_updated_at`  ON `sessions` (`updated_at`) [0m
+D, [2017-03-31T15:46:16.931741 #44749] DEBUG -- :   [1m[35m (40.0ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T15:46:16.971402 #44749] DEBUG -- :   [1m[35mSQL (38.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170307080639')[0m
+D, [2017-03-31T15:46:17.019769 #44749] DEBUG -- :   [1m[35m (48.1ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-03-31T15:46:17.019875 #44749]  INFO -- : Migrating to CreateRoles (20170309024808)
+D, [2017-03-31T15:46:17.100223 #44749] DEBUG -- :   [1m[35m (79.1ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `role_name` varchar(30) COMMENT '角色名称', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB COMMENT '用户角色表'[0m
+D, [2017-03-31T15:46:17.139780 #44749] DEBUG -- :   [1m[35m (39.0ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T15:46:17.179609 #44749] DEBUG -- :   [1m[35mSQL (39.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170309024808')[0m
+D, [2017-03-31T15:46:17.219557 #44749] DEBUG -- :   [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-03-31T15:46:17.219658 #44749]  INFO -- : Migrating to CreateOrganizations (20170309034156)
+D, [2017-03-31T15:46:17.294970 #44749] DEBUG -- :   [1m[35m (73.9ms)[0m  [1m[35mCREATE TABLE `organizations` (`id` int AUTO_INCREMENT PRIMARY KEY, `tenant_id` varchar(80) COMMENT '租户id', `name` varchar(30) COMMENT '组织名', `is_admin_consented` varchar(1) COMMENT '是否被admin授权', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB COMMENT '组织表'[0m
+D, [2017-03-31T15:46:17.332639 #44749] DEBUG -- :   [1m[35m (37.2ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T15:46:17.371567 #44749] DEBUG -- :   [1m[35mSQL (38.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170309034156')[0m
+D, [2017-03-31T15:46:17.411608 #44749] DEBUG -- :   [1m[35m (39.8ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-03-31T15:46:17.411694 #44749]  INFO -- : Migrating to CreateTokens (20170312024547)
+D, [2017-03-31T15:46:17.487075 #44749] DEBUG -- :   [1m[35m (74.3ms)[0m  [1m[35mCREATE TABLE `tokens` (`id` int AUTO_INCREMENT PRIMARY KEY, `gwn_refresh_token` varchar(2000) COMMENT '用户graph window net 的 refresh token', `o365email` varchar(50) COMMENT '用户的office 365邮箱', `gmc_refresh_token` varchar(2000) COMMENT '用户的graph microsoft refresh token', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB COMMENT '用户token表'[0m
+D, [2017-03-31T15:46:17.527822 #44749] DEBUG -- :   [1m[35m (40.3ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T15:46:17.567611 #44749] DEBUG -- :   [1m[35mSQL (39.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170312024547')[0m
+D, [2017-03-31T15:46:17.615789 #44749] DEBUG -- :   [1m[35m (47.9ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-03-31T15:46:17.615889 #44749]  INFO -- : Migrating to AddColumnTokenIdToAccounts (20170312030035)
+D, [2017-03-31T15:46:17.748161 #44749] DEBUG -- :   [1m[35m (131.4ms)[0m  [1m[35mALTER TABLE `accounts` ADD `token_id` int[0m
+D, [2017-03-31T15:46:17.788455 #44749] DEBUG -- :   [1m[35m (39.8ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T15:46:17.828120 #44749] DEBUG -- :   [1m[35mSQL (38.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170312030035')[0m
+D, [2017-03-31T15:46:17.867466 #44749] DEBUG -- :   [1m[35m (39.1ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-03-31T15:46:17.867564 #44749]  INFO -- : Migrating to AddColumnIsConsentToAccounts (20170313031027)
+D, [2017-03-31T15:46:18.017623 #44749] DEBUG -- :   [1m[35m (148.6ms)[0m  [1m[35mALTER TABLE `accounts` ADD `is_consent` tinyint(1) COMMENT '是否授权'[0m
+D, [2017-03-31T15:46:18.055430 #44749] DEBUG -- :   [1m[35m (37.3ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T15:46:18.095760 #44749] DEBUG -- :   [1m[35mSQL (39.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170313031027')[0m
+D, [2017-03-31T15:46:18.135865 #44749] DEBUG -- :   [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-03-31T15:46:18.135955 #44749]  INFO -- : Migrating to CreateStudentSettings (20170324061740)
+D, [2017-03-31T15:46:18.224001 #44749] DEBUG -- :   [1m[35m (86.2ms)[0m  [1m[35mCREATE TABLE `student_settings` (`id` int AUTO_INCREMENT PRIMARY KEY, `class_id` varchar(40) COMMENT '所在班级id', `user_id` varchar(40) COMMENT '用户id', `position` int COMMENT '位置', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+D, [2017-03-31T15:46:18.379147 #44749] DEBUG -- :   [1m[35m (74.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_student_settings_on_class_id_and_user_id`  ON `student_settings` (`class_id`, `user_id`) [0m
+D, [2017-03-31T15:46:18.419445 #44749] DEBUG -- :   [1m[35m (39.8ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T15:46:18.459629 #44749] DEBUG -- :   [1m[35mSQL (39.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170324061740')[0m
+D, [2017-03-31T15:46:18.517846 #44749] DEBUG -- :   [1m[35m (58.0ms)[0m  [1m[35mCOMMIT[0m
+D, [2017-03-31T15:46:18.600520 #44749] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (38.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+D, [2017-03-31T15:46:18.684849 #44749] DEBUG -- :   [1m[35m (41.0ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T15:46:18.725914 #44749] DEBUG -- :   [1m[35mSQL (39.8ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'production', '2017-03-31 07:46:18', '2017-03-31 07:46:18')[0m
+D, [2017-03-31T15:46:18.765321 #44749] DEBUG -- :   [1m[35m (39.1ms)[0m  [1m[35mCOMMIT[0m
+D, [2017-03-31T15:46:18.815980 #44749] DEBUG -- :   [1m[35m (50.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('7569703287600185655')[0m
+I, [2017-03-31T15:46:43.102686 #44769]  INFO -- : [fb6d85d2-ce00-47bc-b354-b13bb7753088] Started GET "/account/login" for 180.150.157.11 at 2017-03-31 15:46:43 +0800
+I, [2017-03-31T15:46:43.111662 #44769]  INFO -- : [fb6d85d2-ce00-47bc-b354-b13bb7753088] Processing by AccountController#login as HTML
+I, [2017-03-31T15:46:43.115644 #44769]  INFO -- : [fb6d85d2-ce00-47bc-b354-b13bb7753088]   Rendering account/login.html.erb within layouts/application
+I, [2017-03-31T15:46:43.119473 #44769]  INFO -- : [fb6d85d2-ce00-47bc-b354-b13bb7753088]   Rendered account/login.html.erb within layouts/application (3.7ms)
+I, [2017-03-31T15:46:46.246422 #44769]  INFO -- : [fb6d85d2-ce00-47bc-b354-b13bb7753088] Completed 200 OK in 3135ms (Views: 3133.1ms | ActiveRecord: 918.7ms)
+D, [2017-03-31T15:46:46.771125 #44769] DEBUG -- : [fb6d85d2-ce00-47bc-b354-b13bb7753088]   [1m[35m (130.9ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T15:46:46.903625 #44769] DEBUG -- : [fb6d85d2-ce00-47bc-b354-b13bb7753088]   [1m[35mSQL (131.0ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFoV3N1Y1lNdzg0NHMzd3VMOXRv\nTjBkbHZzQU9iL1FjTVYvQk1vZFh0ZFR3PQY7AEY=\n', `updated_at` = '2017-03-31 07:46:46' WHERE `sessions`.`id` = 1[0m
+D, [2017-03-31T15:46:47.034772 #44769] DEBUG -- : [fb6d85d2-ce00-47bc-b354-b13bb7753088]   [1m[35m (130.7ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-03-31T15:47:20.543929 #44769]  INFO -- : [48df1544-b4de-4c64-809f-524f59b91d5b] Started GET "/account/login" for 180.150.157.11 at 2017-03-31 15:47:20 +0800
+I, [2017-03-31T15:47:20.545362 #44769]  INFO -- : [48df1544-b4de-4c64-809f-524f59b91d5b] Processing by AccountController#login as HTML
+I, [2017-03-31T15:47:20.839788 #44769]  INFO -- : [48df1544-b4de-4c64-809f-524f59b91d5b]   Rendering account/login.html.erb within layouts/application
+I, [2017-03-31T15:47:20.840149 #44769]  INFO -- : [48df1544-b4de-4c64-809f-524f59b91d5b]   Rendered account/login.html.erb within layouts/application (0.3ms)
+I, [2017-03-31T15:47:20.840843 #44769]  INFO -- : [48df1544-b4de-4c64-809f-524f59b91d5b] Completed 200 OK in 295ms (Views: 1.3ms | ActiveRecord: 132.1ms)
+D, [2017-03-31T15:47:20.986218 #44769] DEBUG -- : [48df1544-b4de-4c64-809f-524f59b91d5b]   [1m[35m (144.5ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T15:47:23.358139 #44769] DEBUG -- : [48df1544-b4de-4c64-809f-524f59b91d5b]   [1m[35m (2371.1ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-03-31T15:48:47.396842 #44769]  INFO -- : [f1c4f535-fcca-41f4-924e-aca4b61d926c] Started GET "/account/login" for 125.35.125.70 at 2017-03-31 15:48:47 +0800
+I, [2017-03-31T15:48:47.398153 #44769]  INFO -- : [f1c4f535-fcca-41f4-924e-aca4b61d926c] Processing by AccountController#login as HTML
+I, [2017-03-31T15:48:47.398676 #44769]  INFO -- : [f1c4f535-fcca-41f4-924e-aca4b61d926c]   Rendering account/login.html.erb within layouts/application
+I, [2017-03-31T15:48:47.399189 #44769]  INFO -- : [f1c4f535-fcca-41f4-924e-aca4b61d926c]   Rendered account/login.html.erb within layouts/application (0.4ms)
+I, [2017-03-31T15:48:47.651751 #44769]  INFO -- : [f1c4f535-fcca-41f4-924e-aca4b61d926c] Completed 200 OK in 253ms (Views: 52.0ms | ActiveRecord: 201.2ms)
+D, [2017-03-31T15:48:47.750756 #44769] DEBUG -- : [f1c4f535-fcca-41f4-924e-aca4b61d926c]   [1m[35m (46.4ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T15:48:47.800725 #44769] DEBUG -- : [f1c4f535-fcca-41f4-924e-aca4b61d926c]   [1m[35mSQL (48.7ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFrT0kwSGdNNFNXU0EyRlExU0k2\ncXFFaGoxL2xnUm9qMVdxaE9ybDlwU0NnPQY7AEY=\n' WHERE `sessions`.`id` = 11[0m
+D, [2017-03-31T15:48:47.850704 #44769] DEBUG -- : [f1c4f535-fcca-41f4-924e-aca4b61d926c]   [1m[35m (49.5ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-03-31T16:49:28.652973 #44769]  INFO -- : [e0d1787a-40f4-4660-82ef-a48e6bd6048a] Started GET "/account/login" for 180.150.157.11 at 2017-03-31 16:49:28 +0800
+I, [2017-03-31T16:49:28.681285 #44769]  INFO -- : [e0d1787a-40f4-4660-82ef-a48e6bd6048a] Processing by AccountController#login as HTML
+I, [2017-03-31T16:49:28.685196 #44769]  INFO -- : [e0d1787a-40f4-4660-82ef-a48e6bd6048a]   Rendering account/login.html.erb within layouts/application
+I, [2017-03-31T16:49:28.695755 #44769]  INFO -- : [e0d1787a-40f4-4660-82ef-a48e6bd6048a]   Rendered account/login.html.erb within layouts/application (10.3ms)
+I, [2017-03-31T16:51:21.732158 #44769]  INFO -- : [e0d1787a-40f4-4660-82ef-a48e6bd6048a] Completed 200 OK in 113050ms (Views: 112350.2ms | ActiveRecord: 698.3ms)
+D, [2017-03-31T16:51:21.832914 #44769] DEBUG -- : [e0d1787a-40f4-4660-82ef-a48e6bd6048a]   [1m[35m (50.1ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T16:51:21.885042 #44769] DEBUG -- : [e0d1787a-40f4-4660-82ef-a48e6bd6048a]   [1m[35mSQL (48.0ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFCeFgrSlErendiT2RTQk80L21y\nR25SK0NEU2crODhIU3JtTitRczFnd2NZPQY7AEY=\n' WHERE `sessions`.`id` = 31[0m
+D, [2017-03-31T16:51:21.948472 #44769] DEBUG -- : [e0d1787a-40f4-4660-82ef-a48e6bd6048a]   [1m[35m (63.1ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-03-31T16:52:52.736244 #44769]  INFO -- : [79afa8ce-51b3-4f4e-ba20-d396515c1c89] Started GET "/account/login" for 180.150.157.11 at 2017-03-31 16:52:52 +0800
+I, [2017-03-31T16:52:52.737324 #44769]  INFO -- : [79afa8ce-51b3-4f4e-ba20-d396515c1c89] Processing by AccountController#login as HTML
+I, [2017-03-31T16:52:54.762704 #44769]  INFO -- : [79afa8ce-51b3-4f4e-ba20-d396515c1c89]   Rendering account/login.html.erb within layouts/application
+I, [2017-03-31T16:52:54.763932 #44769]  INFO -- : [79afa8ce-51b3-4f4e-ba20-d396515c1c89]   Rendered account/login.html.erb within layouts/application (1.1ms)
+I, [2017-03-31T16:52:54.765101 #44769]  INFO -- : [79afa8ce-51b3-4f4e-ba20-d396515c1c89] Completed 200 OK in 2028ms (Views: 2.6ms | ActiveRecord: 114.2ms)
+D, [2017-03-31T16:52:54.887489 #44769] DEBUG -- : [79afa8ce-51b3-4f4e-ba20-d396515c1c89]   [1m[35m (121.5ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T16:52:55.033651 #44769] DEBUG -- : [79afa8ce-51b3-4f4e-ba20-d396515c1c89]   [1m[35m (144.7ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-03-31T16:52:55.248988 #44769]  INFO -- : [74a33a19-1a04-486d-b9d5-4baa067f365b] Started GET "/account/register?class=registerlink" for 180.150.157.11 at 2017-03-31 16:52:55 +0800
+I, [2017-03-31T16:52:55.250497 #44769]  INFO -- : [74a33a19-1a04-486d-b9d5-4baa067f365b] Processing by AccountController#register as HTML
+I, [2017-03-31T16:52:55.250578 #44769]  INFO -- : [74a33a19-1a04-486d-b9d5-4baa067f365b]   Parameters: {"class"=>"registerlink"}
+I, [2017-03-31T16:52:55.467205 #44769]  INFO -- : [74a33a19-1a04-486d-b9d5-4baa067f365b]   Rendering account/register.html.erb within layouts/application
+I, [2017-03-31T16:52:55.468757 #44769]  INFO -- : [74a33a19-1a04-486d-b9d5-4baa067f365b]   Rendered account/register.html.erb within layouts/application (1.0ms)
+I, [2017-03-31T16:52:55.471664 #44769]  INFO -- : [74a33a19-1a04-486d-b9d5-4baa067f365b] Completed 200 OK in 221ms (Views: 4.6ms | ActiveRecord: 101.4ms)
+D, [2017-03-31T16:52:55.907591 #44769] DEBUG -- : [74a33a19-1a04-486d-b9d5-4baa067f365b]   [1m[35m (435.0ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T16:52:56.006958 #44769] DEBUG -- : [74a33a19-1a04-486d-b9d5-4baa067f365b]   [1m[35m (98.7ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-03-31T16:52:58.584876 #44769]  INFO -- : [c8551eae-7d8c-41a1-ae7c-b6f8a153a555] Started GET "/account/register?class=registerlink" for 180.150.157.11 at 2017-03-31 16:52:58 +0800
+I, [2017-03-31T16:52:58.585592 #44769]  INFO -- : [c8551eae-7d8c-41a1-ae7c-b6f8a153a555] Processing by AccountController#register as HTML
+I, [2017-03-31T16:52:58.585648 #44769]  INFO -- : [c8551eae-7d8c-41a1-ae7c-b6f8a153a555]   Parameters: {"class"=>"registerlink"}
+I, [2017-03-31T16:52:58.687790 #44769]  INFO -- : [c8551eae-7d8c-41a1-ae7c-b6f8a153a555]   Rendering account/register.html.erb within layouts/application
+I, [2017-03-31T16:52:58.687957 #44769]  INFO -- : [c8551eae-7d8c-41a1-ae7c-b6f8a153a555]   Rendered account/register.html.erb within layouts/application (0.1ms)
+I, [2017-03-31T16:52:58.689457 #44769]  INFO -- : [c8551eae-7d8c-41a1-ae7c-b6f8a153a555] Completed 200 OK in 104ms (Views: 1.9ms | ActiveRecord: 47.5ms)
+D, [2017-03-31T16:52:58.740457 #44769] DEBUG -- : [c8551eae-7d8c-41a1-ae7c-b6f8a153a555]   [1m[35m (48.9ms)[0m  [1m[35mBEGIN[0m
+D, [2017-03-31T16:52:58.789335 #44769] DEBUG -- : [c8551eae-7d8c-41a1-ae7c-b6f8a153a555]   [1m[35m (48.3ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-03-31T18:18:03.494822 #44769]  INFO -- : [9fa64136-1341-404f-ba46-e83c8a74671a] Started GET "/account/Login" for 125.35.125.70 at 2017-03-31 18:18:03 +0800
+F, [2017-03-31T18:18:03.502348 #44769] FATAL -- : [9fa64136-1341-404f-ba46-e83c8a74671a]   
+F, [2017-03-31T18:18:03.502542 #44769] FATAL -- : [9fa64136-1341-404f-ba46-e83c8a74671a] ActionController::RoutingError (No route matches [GET] "/account/Login"):
+F, [2017-03-31T18:18:03.502577 #44769] FATAL -- : [9fa64136-1341-404f-ba46-e83c8a74671a]   
+F, [2017-03-31T18:18:03.502626 #44769] FATAL -- : [9fa64136-1341-404f-ba46-e83c8a74671a] actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+[9fa64136-1341-404f-ba46-e83c8a74671a] actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+[9fa64136-1341-404f-ba46-e83c8a74671a] railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+[9fa64136-1341-404f-ba46-e83c8a74671a] railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+[9fa64136-1341-404f-ba46-e83c8a74671a] activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+[9fa64136-1341-404f-ba46-e83c8a74671a] activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+[9fa64136-1341-404f-ba46-e83c8a74671a] activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+[9fa64136-1341-404f-ba46-e83c8a74671a] railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+[9fa64136-1341-404f-ba46-e83c8a74671a] actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+[9fa64136-1341-404f-ba46-e83c8a74671a] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+[9fa64136-1341-404f-ba46-e83c8a74671a] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+[9fa64136-1341-404f-ba46-e83c8a74671a] activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+[9fa64136-1341-404f-ba46-e83c8a74671a] actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+[9fa64136-1341-404f-ba46-e83c8a74671a] actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+[9fa64136-1341-404f-ba46-e83c8a74671a] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+[9fa64136-1341-404f-ba46-e83c8a74671a] railties (5.0.2) lib/rails/engine.rb:522:in `call'
+[9fa64136-1341-404f-ba46-e83c8a74671a] puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+[9fa64136-1341-404f-ba46-e83c8a74671a] puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+[9fa64136-1341-404f-ba46-e83c8a74671a] puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+[9fa64136-1341-404f-ba46-e83c8a74671a] puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+[9fa64136-1341-404f-ba46-e83c8a74671a] puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+I, [2017-04-01T10:12:56.403940 #15619]  INFO -- : [dab0d459-c90a-435f-a6e2-e7232d82ce2b] Started GET "/account/login" for 180.150.157.16 at 2017-04-01 10:12:56 +0800
+I, [2017-04-01T10:12:56.409162 #15619]  INFO -- : [dab0d459-c90a-435f-a6e2-e7232d82ce2b] Processing by AccountController#login as HTML
+I, [2017-04-01T10:12:56.415869 #15619]  INFO -- : [dab0d459-c90a-435f-a6e2-e7232d82ce2b]   Rendering account/login.html.erb within layouts/application
+I, [2017-04-01T10:12:56.420541 #15619]  INFO -- : [dab0d459-c90a-435f-a6e2-e7232d82ce2b]   Rendered account/login.html.erb within layouts/application (4.5ms)
+I, [2017-04-01T10:12:58.348707 #15619]  INFO -- : [dab0d459-c90a-435f-a6e2-e7232d82ce2b] Completed 200 OK in 1939ms (Views: 1937.3ms | ActiveRecord: 296.4ms)
+D, [2017-04-01T10:12:58.427029 #15619] DEBUG -- : [dab0d459-c90a-435f-a6e2-e7232d82ce2b]   [1m[35m (37.3ms)[0m  [1m[35mBEGIN[0m
+D, [2017-04-01T10:12:58.467597 #15619] DEBUG -- : [dab0d459-c90a-435f-a6e2-e7232d82ce2b]   [1m[35mSQL (39.4ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFvcnhUb3RBc2Q1K0xua1J4Q2Rt\nc21hOHlVVmQxbWJiZnFQSUp5TGZndjhNPQY7AEY=\n' WHERE `sessions`.`id` = 41[0m
+D, [2017-04-01T10:12:58.511778 #15619] DEBUG -- : [dab0d459-c90a-435f-a6e2-e7232d82ce2b]   [1m[35m (43.8ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-04-01T10:13:36.110748 #15619]  INFO -- : [2e9482c7-5476-4140-87fa-34ec1a11ec06] Started GET "/account/login" for 101.226.33.227 at 2017-04-01 10:13:36 +0800
+I, [2017-04-01T10:13:36.111702 #15619]  INFO -- : [2e9482c7-5476-4140-87fa-34ec1a11ec06] Processing by AccountController#login as */*
+I, [2017-04-01T10:13:36.131884 #15619]  INFO -- : [2e9482c7-5476-4140-87fa-34ec1a11ec06]   Rendering account/login.html.erb within layouts/application
+I, [2017-04-01T10:13:36.133281 #15619]  INFO -- : [2e9482c7-5476-4140-87fa-34ec1a11ec06]   Rendered account/login.html.erb within layouts/application (1.3ms)
+I, [2017-04-01T10:13:36.346066 #15619]  INFO -- : [2e9482c7-5476-4140-87fa-34ec1a11ec06] Completed 200 OK in 234ms (Views: 42.2ms | ActiveRecord: 172.3ms)
+D, [2017-04-01T10:13:36.460859 #15619] DEBUG -- : [2e9482c7-5476-4140-87fa-34ec1a11ec06]   [1m[35m (40.5ms)[0m  [1m[35mBEGIN[0m
+D, [2017-04-01T10:13:36.510062 #15619] DEBUG -- : [2e9482c7-5476-4140-87fa-34ec1a11ec06]   [1m[35mSQL (48.1ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFpMHdoMCtabzk4U1d6VUswZ0ZW\neFFkZUkydWZEQjNHaC9BTWVla2NMVGlRPQY7AEY=\n' WHERE `sessions`.`id` = 51[0m
+D, [2017-04-01T10:13:36.598887 #15619] DEBUG -- : [2e9482c7-5476-4140-87fa-34ec1a11ec06]   [1m[35m (88.4ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-04-01T10:13:38.127982 #15619]  INFO -- : [fea60ce4-6e1a-4736-980e-9ebee8d29da0] Started GET "/account/login" for 101.226.51.229 at 2017-04-01 10:13:38 +0800
+I, [2017-04-01T10:13:38.128542 #15619]  INFO -- : [fea60ce4-6e1a-4736-980e-9ebee8d29da0] Processing by AccountController#login as */*
+I, [2017-04-01T10:13:38.129013 #15619]  INFO -- : [fea60ce4-6e1a-4736-980e-9ebee8d29da0]   Rendering account/login.html.erb within layouts/application
+I, [2017-04-01T10:13:38.129337 #15619]  INFO -- : [fea60ce4-6e1a-4736-980e-9ebee8d29da0]   Rendered account/login.html.erb within layouts/application (0.2ms)
+I, [2017-04-01T10:13:38.370390 #15619]  INFO -- : [fea60ce4-6e1a-4736-980e-9ebee8d29da0] Completed 200 OK in 242ms (Views: 62.1ms | ActiveRecord: 179.4ms)
+D, [2017-04-01T10:13:38.467508 #15619] DEBUG -- : [fea60ce4-6e1a-4736-980e-9ebee8d29da0]   [1m[35m (49.3ms)[0m  [1m[35mBEGIN[0m
+D, [2017-04-01T10:13:38.515153 #15619] DEBUG -- : [fea60ce4-6e1a-4736-980e-9ebee8d29da0]   [1m[35mSQL (46.5ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjF1Q2hFenRHZGdnVVZVZHFEdWIw\nVUxDNHgvdHRaaSsrUWRycDlQQXY4MlpJPQY7AEY=\n' WHERE `sessions`.`id` = 61[0m
+D, [2017-04-01T10:13:38.555508 #15619] DEBUG -- : [fea60ce4-6e1a-4736-980e-9ebee8d29da0]   [1m[35m (38.8ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-04-01T11:26:16.888477 #15619]  INFO -- : [c82040a6-14ff-45b7-b839-ddec33cc7cf9] Started GET "/index.php" for 223.105.4.250 at 2017-04-01 11:26:16 +0800
+F, [2017-04-01T11:26:16.896387 #15619] FATAL -- : [c82040a6-14ff-45b7-b839-ddec33cc7cf9]   
+F, [2017-04-01T11:26:16.896724 #15619] FATAL -- : [c82040a6-14ff-45b7-b839-ddec33cc7cf9] ActionController::RoutingError (No route matches [GET] "/index.php"):
+F, [2017-04-01T11:26:16.896774 #15619] FATAL -- : [c82040a6-14ff-45b7-b839-ddec33cc7cf9]   
+F, [2017-04-01T11:26:16.896872 #15619] FATAL -- : [c82040a6-14ff-45b7-b839-ddec33cc7cf9] actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] railties (5.0.2) lib/rails/engine.rb:522:in `call'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+[c82040a6-14ff-45b7-b839-ddec33cc7cf9] puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+I, [2017-04-01T11:31:01.474813 #15619]  INFO -- : [87d1302e-1a96-4dd5-afb1-0a06d1ec42c9] Started GET "/account/login" for 176.195.216.209 at 2017-04-01 11:31:01 +0800
+I, [2017-04-01T11:31:01.481828 #15619]  INFO -- : [87d1302e-1a96-4dd5-afb1-0a06d1ec42c9] Processing by AccountController#login as */*
+I, [2017-04-01T11:31:01.488383 #15619]  INFO -- : [87d1302e-1a96-4dd5-afb1-0a06d1ec42c9]   Rendering account/login.html.erb within layouts/application
+I, [2017-04-01T11:31:01.492025 #15619]  INFO -- : [87d1302e-1a96-4dd5-afb1-0a06d1ec42c9]   Rendered account/login.html.erb within layouts/application (3.3ms)
+I, [2017-04-01T11:31:27.288765 #15619]  INFO -- : [87d1302e-1a96-4dd5-afb1-0a06d1ec42c9] Completed 200 OK in 25807ms (Views: 25528.8ms | ActiveRecord: 274.4ms)
+D, [2017-04-01T11:31:27.396881 #15619] DEBUG -- : [87d1302e-1a96-4dd5-afb1-0a06d1ec42c9]   [1m[35m (57.4ms)[0m  [1m[35mBEGIN[0m
+D, [2017-04-01T11:31:27.444131 #15619] DEBUG -- : [87d1302e-1a96-4dd5-afb1-0a06d1ec42c9]   [1m[35mSQL (45.3ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjE0NWlsWkN1YWdsdFZxSk5TYjBD\nTTZaS0hZT3J5MHRvQ3R4SnY4RFpNS0lFPQY7AEY=\n' WHERE `sessions`.`id` = 71[0m
+D, [2017-04-01T11:31:27.482416 #15619] DEBUG -- : [87d1302e-1a96-4dd5-afb1-0a06d1ec42c9]   [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+I, [2017-04-01T12:56:23.800177 #15619]  INFO -- : [8966d80d-b23a-4bce-91f4-3b6f4a7322e2] Started GET "/account/login" for 176.15.227.30 at 2017-04-01 12:56:23 +0800
+I, [2017-04-01T12:56:23.814797 #15619]  INFO -- : [8966d80d-b23a-4bce-91f4-3b6f4a7322e2] Processing by AccountController#login as HTML
+I, [2017-04-01T12:56:23.822128 #15619]  INFO -- : [8966d80d-b23a-4bce-91f4-3b6f4a7322e2]   Rendering account/login.html.erb within layouts/application
+I, [2017-04-01T12:56:23.825820 #15619]  INFO -- : [8966d80d-b23a-4bce-91f4-3b6f4a7322e2]   Rendered account/login.html.erb within layouts/application (3.4ms)
+I, [2017-04-01T12:56:59.693885 #15619]  INFO -- : [8966d80d-b23a-4bce-91f4-3b6f4a7322e2] Completed 200 OK in 35878ms (Views: 35604.6ms | ActiveRecord: 270.6ms)
+D, [2017-04-01T12:56:59.788666 #15619] DEBUG -- : [8966d80d-b23a-4bce-91f4-3b6f4a7322e2]   [1m[35m (44.3ms)[0m  [1m[35mBEGIN[0m
+D, [2017-04-01T12:56:59.841412 #15619] DEBUG -- : [8966d80d-b23a-4bce-91f4-3b6f4a7322e2]   [1m[35mSQL (51.0ms)[0m  [1m[33mUPDATE `sessions` SET `data` = 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFVb0VqdlIzUU5meHBIMHRGRkN6\nR0s2NUFZeXRtQXBFRmhORWFMWmFPUzFRPQY7AEY=\n' WHERE `sessions`.`id` = 81[0m
+D, [2017-04-01T12:56:59.890021 #15619] DEBUG -- : [8966d80d-b23a-4bce-91f4-3b6f4a7322e2]   [1m[35m (48.3ms)[0m  [1m[35mCOMMIT[0m
