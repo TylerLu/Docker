@@ -19,5 +19,10 @@ ADD . /opt/splash
 
 RUN cd /opt/splash/; bundle install
 WORKDIR /opt/splash/
+
+
+RUN sed -i "23 a require_relative \'request_parameters.rb\'" /usr/local/bundle/gems/adal-1.0.0/lib/adal/client_assertion_certificate.rb
+RUN cat /usr/local/bundle/gems/adal-1.0.0/lib/adal/client_assertion_certificate.rb
+
 CMD ["rails", "s"]
 #["bundle", "exec", "passenger", "start"]
